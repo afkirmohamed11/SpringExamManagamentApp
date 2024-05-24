@@ -8,16 +8,15 @@ import jakarta.validation.constraints.*;
 @Entity
 public class TypeExamen {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idTypeExamen;
-	
-	@NotBlank(message = "Ce champs est obligatoire")
-	private String intitulé;
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idTypeExamen;
 
-	@OneToMany(mappedBy = "examen", cascade = CascadeType.ALL)
-	private Set<Examen> examens;
+    @NotBlank(message = "Ce champ est obligatoire")
+    private String intitule;
+
+    @OneToMany(mappedBy = "typeExamen", cascade = CascadeType.ALL, targetEntity = Examen.class)
+    private Set<Examen> examens;
 	
 	
 }

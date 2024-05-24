@@ -17,6 +17,4 @@ public interface IPersonnelService {
 
 	public Personnel getPersonnelById(Long id);
 	
-	public Personnel getPersonnelByNom(String nom);
-
 }

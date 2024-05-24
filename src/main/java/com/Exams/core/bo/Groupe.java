@@ -6,15 +6,15 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Groupe {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idGroupe;
-	
-	@NotBlank(message = "Ce champs est obligatoire")
-	private String nomGroupe;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_enseignant")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idGroupe;
+
+    @NotBlank(message = "Ce champ est obligatoire")
+    private String nomGroupe;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_groupe")
     private Set<Enseignant> enseignants;
 	
 	public Long getIdGroupe() {

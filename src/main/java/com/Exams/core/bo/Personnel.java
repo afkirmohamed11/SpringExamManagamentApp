@@ -1,22 +1,20 @@
 package com.Exams.core.bo;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+
 
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Personnel {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idPersonnel;
-	
-	@NotBlank(message = "Ce champs est obligatoire")
-	private String nom;
-	
-	@NotBlank(message = "Ce champs est obligatoire")
-	private String prenom;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idPersonnel;
+
+    private String nom;
+
+    private String prenom;
 
 	public Long getIdPersonnel() {
 		return idPersonnel;

@@ -1,8 +1,6 @@
 package com.Exams.core.bo;
 
-
 import java.util.Set;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -23,9 +21,8 @@ public class Salle {
 	@NotBlank(message = "Ce champs est obligatoire")
 	private Integer capacité;
 	
-	
-	@OneToMany(mappedBy = "salle", cascade = CascadeType.ALL)
-	private Set<Surveillance> surveillances;
+    @OneToMany(mappedBy = "salle", cascade = CascadeType.ALL, targetEntity = Surveillance.class )
+    private Set<Surveillance> surveillances;
 	
 	
 

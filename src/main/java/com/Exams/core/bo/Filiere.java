@@ -8,18 +8,16 @@ import jakarta.validation.constraints.*;
 
 @Entity
 public class Filiere {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idFiliere;
-	
-	@NotBlank(message = "Ce champs est obligatoire")
-	private String nomFiliere;
-	
-	
-	@OneToMany(mappedBy = "filiere", cascade = CascadeType.ALL )
-	private Set<Enseignant> enseignants;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idFiliere;
+
+    @NotBlank(message = "Ce champ est obligatoire")
+    private String nomFiliere;
+
+    @OneToMany(mappedBy = "filiere", cascade = CascadeType.ALL, targetEntity = Enseignant.class)
+    private Set<Enseignant> enseignants;
 
 	public Long getIdFiliere() {
 		return idFiliere;

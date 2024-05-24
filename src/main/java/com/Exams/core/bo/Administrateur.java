@@ -6,10 +6,10 @@ import jakarta.persistence.*;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "adminId")
-public class Administrateur extends Personnel{
-	
-	@OneToMany(mappedBy = "administrateur", cascade = CascadeType.ALL)
-	private Set<Surveillance> surveillances;
+public class Administrateur extends Personnel {
+
+    @OneToMany(mappedBy = "administrateur", cascade = CascadeType.ALL, targetEntity = Surveillance.class)
+    private Set<Surveillance> surveillances;
 	
 	
 	

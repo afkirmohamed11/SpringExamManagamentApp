@@ -5,13 +5,13 @@ import jakarta.validation.constraints.*;
 
 @Entity
 public class Niveau {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idNiveau;
-	
-	@NotBlank(message = "Ce champs est obligatoire")
-	private String titre;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idNiveau;
+
+    @NotBlank(message = "Ce champ est obligatoire")
+    private String titre;
 
 	
 	
